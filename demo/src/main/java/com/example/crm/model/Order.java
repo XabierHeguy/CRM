@@ -117,15 +117,13 @@ public class Order {
 		this.nbDays = nbDays;
 		this.unitPrice = unitPrice;
 		this.state = state;
-		this.totalExcludeTaxe = totalExcludeTaxe;
-		this.totalWithTaxe = totalWithTaxe;
 	}
 
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", clientId=" + clientId + ", typePresta=" + typePresta + ", designation="
 				+ designation + ", nbDays=" + nbDays + ", unitPrice=" + unitPrice + ", state=" + state
-				+ ", totalExcludeTaxe=" + totalExcludeTaxe + ", totalWithTaxe=" + totalWithTaxe + "]";
+			 + "]";
 	}
 
 }
