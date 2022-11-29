@@ -25,10 +25,10 @@ public class Order {
 	private double unitPrice;
 	@Column(name = "state")
 	private boolean state;
-	@Column(name = "total_exclude_taxe")
-	private double totalExcludeTaxe;
-	@Column(name = "total_with_taxe")
-	private double totalWithTaxe;
+//	@Column(name = "total_exclude_taxe")
+//	private double totalExcludeTaxe;
+//	@Column(name = "total_with_taxe")
+//	private double totalWithTaxe;
 	
 	@ManyToOne
 	private Client client;
@@ -89,21 +89,21 @@ public class Order {
 		this.state = state;
 	}
 
-	public double getTotalExcludeTaxe() {
-		return totalExcludeTaxe;
-	}
-
-	public void setTotalExcludeTaxe(double totalExcludeTaxe) {
-		this.totalExcludeTaxe = totalExcludeTaxe;
-	}
-
-	public double getTotalWithTaxe() {
-		return totalWithTaxe;
-	}
-
-	public void setTotalWithTaxe(double totalWithTaxe) {
-		this.totalWithTaxe = totalWithTaxe;
-	}
+//	public double getTotalExcludeTaxe() {
+//		return totalExcludeTaxe;
+//	}
+//
+//	public void setTotalExcludeTaxe(double totalExcludeTaxe) {
+//		this.totalExcludeTaxe = totalExcludeTaxe;
+//	}
+//
+//	public double getTotalWithTaxe() {
+//		return totalWithTaxe;
+//	}
+//
+//	public void setTotalWithTaxe(double totalWithTaxe) {
+//		this.totalWithTaxe = totalWithTaxe;
+//	}
 
 	public Order() {
 	}

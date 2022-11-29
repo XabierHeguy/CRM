@@ -31,8 +31,9 @@ public class ClientDirectory {
 		clientRepository.deleteById(id);
 	}
 
-	public void updateClient(Client client, Long id) {
-		clientRepository.save(client);
+	public void updateClient(Client varClient, Long id) {
+//		if(clientRepository.existsById(id))
+		clientRepository.save(varClient);
 	}
 
 }

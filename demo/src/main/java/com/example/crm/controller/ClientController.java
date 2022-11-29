@@ -39,7 +39,7 @@ public class ClientController {
 		}
 	}
 	
-	@PostMapping("client")
+	@PostMapping("clients")
 	public Client postClient(@RequestBody Client newClient) {
 		clientDirectory.addClient(newClient);
 		return newClient;
@@ -51,8 +51,8 @@ public class ClientController {
 	}
 	
 	@PutMapping("clients/{id}")
-	public  ResponseEntity<Client> updateClient(@RequestBody Client varClient, Long id){
-		if(id != varClient.getId()) {
+	public  ResponseEntity<Client> updateClient(@RequestBody Client varClient,  @PathVariable("id") Long id){
+		if(!varClient.getId().equals(id)) {
 			return ResponseEntity.badRequest().build();
 		}
 		else {
