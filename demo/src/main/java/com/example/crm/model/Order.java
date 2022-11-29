@@ -13,15 +13,14 @@ import javax.persistence.Table;
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "int")
 	private Long id;
-	@Column(name = "client_id")
-	private Long clientId;
 	@Column(name = "type_presta")
 	private String typePresta;
 	@Column(name = "designation")
 	private String designation;
 	@Column(name = "nb_days")
-	private Long nbDays;
+	private int nbDays;
 	@Column(name = "unit_price")
 	private double unitPrice;
 	@Column(name = "state")
@@ -42,12 +41,12 @@ public class Order {
 		this.id = id;
 	}
 
-	public Long getClientId() {
-		return clientId;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setClientId(Long clientId) {
-		this.clientId = clientId;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public String getTypePresta() {
@@ -66,11 +65,11 @@ public class Order {
 		this.designation = designation;
 	}
 
-	public Long getNbDays() {
+	public int getNbDays() {
 		return nbDays;
 	}
 
-	public void setNbDays(Long nbDays) {
+	public void setNbDays(int nbDays) {
 		this.nbDays = nbDays;
 	}
 
@@ -109,9 +108,8 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(Long clientId, String typePresta, String designation, Long nbDays, double unitPrice, boolean state,
+	public Order(Long clientId, String typePresta, String designation, int nbDays, double unitPrice, boolean state,
 			double totalExcludeTaxe, double totalWithTaxe) {
-		this.clientId = clientId;
 		this.typePresta = typePresta;
 		this.designation = designation;
 		this.nbDays = nbDays;
@@ -121,7 +119,7 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", clientId=" + clientId + ", typePresta=" + typePresta + ", designation="
+		return "Order [id=" + id + ", typePresta=" + typePresta + ", designation="
 				+ designation + ", nbDays=" + nbDays + ", unitPrice=" + unitPrice + ", state=" + state
 			 + "]";
 	}

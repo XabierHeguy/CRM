@@ -7,12 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 @Table(name = "clients")
 public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "int")
 	private Long id;
 	@Column(name = "company_name")
 	private String companyName;
@@ -24,7 +27,8 @@ public class Client {
 	private String email;
 	@Column(name = "phone")
 	private String phone;
-	@Column(name = "address")
+	@Column(name = "address", columnDefinition = "LONGTEXT")
+	@Type(type = "text")
 	private String address;
 	@Column(name = "zip_code")
 	private String zipCode;
