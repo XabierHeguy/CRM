@@ -36,8 +36,8 @@ public class Client {
 	private String city;
 	@Column(name = "country")
 	private String country;
-	@Column(name = "state")
-	private boolean state;
+	@Column(name = "state", columnDefinition = "BIT")
+	private ClientState state;
 
 	public Long getId() {
 		return id;
@@ -119,11 +119,11 @@ public class Client {
 		this.country = country;
 	}
 
-	public boolean getState() {
+	public ClientState getState() {
 		return state;
 	}
 
-	public void setState(boolean state) {
+	public void setState(ClientState state) {
 		this.state = state;
 	}
 
@@ -131,7 +131,7 @@ public class Client {
 	}
 
 	public Client(String companyName, String firstName, String lastName, String email, String phone, String address,
-			String zipCode, String city, String country, boolean state) {
+			String zipCode, String city, String country, ClientState state) {
 		this.companyName = companyName;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -141,7 +141,7 @@ public class Client {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.country = country;
-		this.state = state;
+		this.state = ClientState.ACTIVE;
 	}
 
 	@Override

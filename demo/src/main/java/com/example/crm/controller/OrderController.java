@@ -51,7 +51,7 @@ public class OrderController {
 	}
 	
 	@PutMapping("orders/{id}")
-	public  ResponseEntity<Order> updateOrder(@RequestBody Order varOrder, Long id){
+	public  ResponseEntity<Order> updateOrder(@RequestBody Order varOrder,@PathVariable("id") Long id){
 		if(id != varOrder.getId()) {
 			return ResponseEntity.badRequest().build();
 		}

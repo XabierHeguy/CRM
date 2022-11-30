@@ -32,7 +32,6 @@ public class ClientDirectory {
 	}
 
 	public void updateClient(Client varClient, Long id) {
-//		if(clientRepository.existsById(id))
 		clientRepository.save(varClient);
 	}
 

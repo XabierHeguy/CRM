@@ -23,12 +23,8 @@ public class Order {
 	private int nbDays;
 	@Column(name = "unit_price")
 	private double unitPrice;
-	@Column(name = "state")
-	private boolean state;
-//	@Column(name = "total_exclude_taxe")
-//	private double totalExcludeTaxe;
-//	@Column(name = "total_with_taxe")
-//	private double totalWithTaxe;
+	@Column(name = "state", columnDefinition = "BIT")
+	private OrderState state;
 	
 	@ManyToOne
 	private Client client;
@@ -81,40 +77,24 @@ public class Order {
 		this.unitPrice = unitPrice;
 	}
 
-	public boolean getState() {
+	public OrderState getState() {
 		return state;
 	}
 
-	public void setState(boolean state) {
+	public void setState(OrderState state) {
 		this.state = state;
 	}
-
-//	public double getTotalExcludeTaxe() {
-//		return totalExcludeTaxe;
-//	}
-//
-//	public void setTotalExcludeTaxe(double totalExcludeTaxe) {
-//		this.totalExcludeTaxe = totalExcludeTaxe;
-//	}
-//
-//	public double getTotalWithTaxe() {
-//		return totalWithTaxe;
-//	}
-//
-//	public void setTotalWithTaxe(double totalWithTaxe) {
-//		this.totalWithTaxe = totalWithTaxe;
-//	}
 
 	public Order() {
 	}
 
-	public Order(Long clientId, String typePresta, String designation, int nbDays, double unitPrice, boolean state,
+	public Order(Long clientId, String typePresta, String designation, int nbDays, double unitPrice, OrderState state,
 			double totalExcludeTaxe, double totalWithTaxe) {
 		this.typePresta = typePresta;
 		this.designation = designation;
 		this.nbDays = nbDays;
 		this.unitPrice = unitPrice;
-		this.state = state;
+		this.state = OrderState.OPTION;
 	}
 
 	@Override
